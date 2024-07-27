@@ -15,6 +15,7 @@
         "maxEOF": 1
       }
     ],
-    "object-curly-newline": 0
+    "object-curly-newline": 0,
+    "react/react-in-jsx-scope": 0
   }
 }
