@@ -1,6 +1,14 @@
+import Navbar from './components/Navbar.jsx';
+import Hero from './components/Hero.jsx';
+import Highlights from './components/Highlights.jsx';
+
 const App = () => {
   return (
-    <h1>Hallo! Guten Tag!</h1>
+    <main className='bg-black'>
+      <Navbar />
+      <Hero />
+      <Highlights />
+    </main>
   )
 }
 
