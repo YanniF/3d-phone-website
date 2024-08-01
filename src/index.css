@@ -26,7 +26,8 @@ canvas {
   margin-inline-start: auto;
   margin-inline-end: auto;
   position: relative;
-  max-width: 1120px;
+  /*max-width: 1120px;*/
+  max-width: 1300px;
 }
 
 @layer utilities {
