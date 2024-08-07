@@ -1,6 +1,6 @@
 import {useGSAP} from '@gsap/react';
 import gsap from 'gsap';
-import { heroVideo, smallHeroVideo } from '../utils/index.js';
+import { heroVideo, smallHeroVideo } from '../utils/assets.js';
 import {useEffect, useState} from 'react';
 
 const breakpoint = 760
