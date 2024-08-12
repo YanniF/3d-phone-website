@@ -2,7 +2,7 @@ import {footerLinks} from '../constants/index.js';
 
 const Footer = () => {
   return (
-    <footer className="p-5 sm:px-10">
+    <footer className="mt-2 p-5 sm:px-10">
       <div className="screen-max-width">
         <div>
           <p className="text-xs font-semibold text-gray">
