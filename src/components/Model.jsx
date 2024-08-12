@@ -7,7 +7,7 @@ import ModelView from './ModelView.jsx';
 import {yellowImg} from '../utils/assets.js';
 import {View} from '@react-three/drei';
 import {models, sizes} from '../constants/index.js';
-import {animateWithGsapTimeline} from '../utils/animations.js';
+import {animateWithGsap, animateWithGsapTimeline} from '../utils/animations.js';
 
 const Model = () => {
   const [size, setSize] = useState('small');
@@ -31,14 +31,14 @@ const Model = () => {
   const tl = gsap.timeline()
 
   useEffect(() => {
-    if(size === 'small') {
+    if (size === 'small') {
       animateWithGsapTimeline(tl, large, largeRotation, '#view2', '#view1', {
         transform: 'translateX(0)',
         duration: 2
       });
     }
 
-    if(size === 'large') {
+    if (size === 'large') {
       animateWithGsapTimeline(tl, small, smallRotation, '#view1', '#view2', {
         transform: 'translateX(-100%)',
         duration: 2
@@ -47,19 +47,17 @@ const Model = () => {
   }, [size]);
 
   useGSAP(() => {
-    gsap.to('#heading', {
-      y: 0,
-      opacity: 1,
-      scrollTrigger: {
-        trigger: '#model',
-      },
-    })
+    animateWithGsap(
+      '#model-heading',
+      { y: 0, opacity: 1 },
+      { trigger: '#model' }
+    )
   }, [])
 
   return (
     <section className="common-padding">
       <div className="screen-max-width" id="model">
-        <h1 id="heading" className="section-heading">Take a closer look.</h1>
+        <h1 id="model-heading" className="section-heading">Take a closer look.</h1>
 
         <div className="mt-5 flex flex-col items-center">
           <div className="relative h-[75vh] w-full overflow-hidden md:h-[90vh]">
@@ -93,7 +91,7 @@ const Model = () => {
               }}
               eventSource={document.getElementById('root')}
             >
-              <View.Port />
+              <View.Port/>
             </Canvas>
           </div>
 
@@ -105,14 +103,14 @@ const Model = () => {
                   <li
                     key={i}
                     className="mx-2 size-6 cursor-pointer rounded-full hover:opacity-90"
-                    style={{ backgroundColor: model.color[0] }}
+                    style={{backgroundColor: model.color[0]}}
                     onClick={() => setModel(model)}
                   />
                 ))}
               </ul>
 
-              <button className="size-btn-container" >
-                {sizes.map(({ label, value }) => (
+              <button className="size-btn-container">
+                {sizes.map(({label, value}) => (
                   <span
                     key={label}
                     className="size-btn hover:opacity-90"

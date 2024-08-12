@@ -37,6 +37,6 @@ export const animateWithGsap = (target, animationProps, scrollProps) => {
       toggleActions: 'restart reverse restart reverse',
       start: 'top 85%',
       ...scrollProps,
-    }
+    },
   })
 }
